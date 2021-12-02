@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Controls({ eyeColors, selectedEyeColor, filterChange }) {
+export default function Controls({ characters, eyeColors, selectedEyeColor, filterChange }) {
   return (
     <div>
       <h4>Filter by Eye Color</h4>
@@ -8,9 +8,9 @@ export default function Controls({ eyeColors, selectedEyeColor, filterChange }) 
         <option key="all" value="all">
           All
         </option>
-        {eyeColors.map(({ color }) => (
-          <option key={color} value={color}>
-            {color}
+        {characters.map(({ name, eye_color }) => (
+          <option key={name} value={eye_color}>
+            {eye_color}
           </option>
         ))}
       </select>

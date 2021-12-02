@@ -35,25 +35,23 @@ export default function Compendium() {
     getCharacters()
   }, [])
 
-  useEffect(() => {
-    async function getFilteredCharacters() {
-      if (!selectedEyeColor) return
-      setLoading(true)
+  // useEffect(() => {
+  //   async function getFilteredCharacters() {
+  //     if (!selectedEyeColor) return
+  //     setLoading(true)
 
-      // if not all then show filtered characters
-      if (selectedEyeColor !== 'all') {
-        const filteredCharacters = await filterCharactersByEyeColor(characters, selectedEyeColor)
-        setCharacters(filteredCharacters)
-      } else {
-        const charactersList = await fetchCharacters()
-        // if all then just show all characters
-        setCharacters(charactersList)
-      }
-      setLoading(false)
-    }
+  //     if (selectedEyeColor !== 'all') {
+  //       const filteredCharacters = filterCharactersByEyeColor(characters, selectedEyeColor)
+  //       setCharacters(filteredCharacters)
+  //     } else {
+  //       const charactersList = await fetchCharacters()
+  //       setCharacters(charactersList)
+  //     }
+  //     setLoading(false)
+  //   }
 
-    getFilteredCharacters()
-  }, [selectedEyeColor])
+  //   getFilteredCharacters()
+  // }, [selectedEyeColor])
 
   if (loading) {
     return <h1>Loading...</h1>
@@ -63,6 +61,7 @@ export default function Compendium() {
     <main className="compendium">
       <h1>SWAPI Compendium</h1>
       <Controls
+        characters={characters}
         eyeColors={eyeColors}
         selectedEyeColor={selectedEyeColor}
         filterChange={setSelectedEyeColor}
