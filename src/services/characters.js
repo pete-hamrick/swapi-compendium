@@ -3,5 +3,5 @@ export const fetchCharacters = async () => {
 
   const characterData = await characterResults.json()
 
-  return characterData.results
+  return characterData
 }
