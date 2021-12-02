@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import CharactersList from '../../components/CharactersList/CharactersList'
 import Controls from '../../components/Controls/Controls'
 import { fetchCharacters } from '../../services/characters'
+import { filterCharactersByEyeColor } from '../../utils/helperFunctions'
 import './Compendium.css'
 
 export default function Compendium() {
@@ -41,16 +42,17 @@ export default function Compendium() {
 
       // if not all then show filtered characters
       if (selectedEyeColor !== 'all') {
-        const filteredCharacters = filterCharactersByEyeColor(characters, selectedEyeColor)
+        const filteredCharacters = await filterCharactersByEyeColor(characters, selectedEyeColor)
         setCharacters(filteredCharacters)
       } else {
         const charactersList = await fetchCharacters()
+        // if all then just show all characters
         setCharacters(charactersList)
       }
       setLoading(false)
-
-      // if all then just show all characters
     }
+
+    getFilteredCharacters()
   }, [selectedEyeColor])
 
   if (loading) {
