@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import CharactersList from '../../components/CharactersList/CharactersList'
+import { fetchCharacters } from '../../services/characters'
 
 export default function Compendium() {
   // add state hooks
@@ -26,7 +27,7 @@ export default function Compendium() {
   return (
     <>
       <h1>SWAPI Compendium</h1>
-      <CharactersList />
+      <CharactersList characters={characters} />
     </>
   )
 }

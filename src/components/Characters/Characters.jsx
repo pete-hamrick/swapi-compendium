@@ -1,5 +1,5 @@
 import React from 'react'
 
-export default function Characters({ value }) {
-  return <li>Character {value}</li>
+export default function Characters({ character }) {
+  return <li>{character.name}</li>
 }
