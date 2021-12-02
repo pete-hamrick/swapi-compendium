@@ -1,0 +1,7 @@
+.character {
+  list-style: none;
+  border: 1px solid black;
+  width: 300px;
+  height: 300px;
+  margin: 10px;
+}
