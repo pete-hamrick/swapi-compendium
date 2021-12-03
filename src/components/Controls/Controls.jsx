@@ -1,8 +1,8 @@
 import React from 'react'
 
-export default function Controls({ characters, selectedEyeColor, filterChange }) {
+export default function Controls({ characters, selectedEyeColor, filterChange, handleClick }) {
   return (
-    <div>
+    <section>
       <h4>Filter by Eye Color</h4>
       <select value={selectedEyeColor} onChange={(e) => filterChange(e.target.value)}>
         <option key="all" value="all">
@@ -14,6 +14,14 @@ export default function Controls({ characters, selectedEyeColor, filterChange })
           </option>
         ))}
       </select>
-    </div>
+      <div className="next-prev-buttons">
+        <button value="prev" onClick={handleClick}>
+          Previous Page
+        </button>
+        <button value="next" onClick={handleClick}>
+          Next Page
+        </button>
+      </div>
+    </section>
   )
 }

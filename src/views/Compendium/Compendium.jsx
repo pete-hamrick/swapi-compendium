@@ -56,11 +56,13 @@ export default function Compendium() {
   // want to generically handle clicking next or previous with a function
   // pass function down as props to each button
   // assign each button a value
+
   // if next button clicked
   // set loading to true
   // call fetchNewPage function passing in nextPageUrl
   // update relevant state(probably all of it, ha)
   // set loading to false
+
   // otherwise
   // set loading to true
   // call fetchNewPage function passing in prevPageUrl
@@ -79,6 +81,7 @@ export default function Compendium() {
         characters={characters}
         selectedEyeColor={selectedEyeColor}
         filterChange={setSelectedEyeColor}
+        handleClick={handleClick}
       />
       <CharactersList characters={characters} />
     </main>
