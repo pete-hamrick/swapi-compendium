@@ -23,9 +23,9 @@ export default function Compendium() {
       setLoading(false)
     }
 
-    function getEyeColors(characters) {
+    function getEyeColors(listOfCharacters) {
       const eyeColors = []
-      characters.map((character) => {
+      listOfCharacters.map((character) => {
         eyeColors.push(character.eye_color)
       })
       const uniqueEyeColor = new Set(eyeColors)
@@ -51,7 +51,7 @@ export default function Compendium() {
   //   }
 
   //   getFilteredCharacters()
-  // }, [selectedEyeColor])
+  // }, [])
 
   if (loading) {
     return <h1>Loading...</h1>
@@ -62,7 +62,6 @@ export default function Compendium() {
       <h1>SWAPI Compendium</h1>
       <Controls
         characters={characters}
-        eyeColors={eyeColors}
         selectedEyeColor={selectedEyeColor}
         filterChange={setSelectedEyeColor}
       />
