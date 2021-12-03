@@ -53,6 +53,21 @@ export default function Compendium() {
   //   getFilteredCharacters()
   // }, [])
 
+  // want to generically handle clicking next or previous with a function
+  // pass function down as props to each button
+  // assign each button a value
+  // if next button clicked
+  // set loading to true
+  // call fetchNewPage function passing in nextPageUrl
+  // update relevant state(probably all of it, ha)
+  // set loading to false
+  // otherwise
+  // set loading to true
+  // call fetchNewPage function passing in prevPageUrl
+  // update relevant state(probably all of it, ha)
+  // set loading to false
+  const handleClick = async () => {}
+
   if (loading) {
     return <h1>Loading...</h1>
   }

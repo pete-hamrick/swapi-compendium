@@ -6,18 +6,10 @@ export const fetchCharacters = async () => {
   return characterData
 }
 
-export const fetchNextPage = async (nextPageUrl) => {
-  const nextPageResults = await fetch(nextPageUrl)
+export const fetchNewPage = async (newPageUrl) => {
+  const newPageResults = await fetch(newPageUrl)
 
-  const characterData = await nextPageResults.json()
-
-  return characterData
-}
-
-export const fetchPrevPage = async (prevPageUrl) => {
-  const prevPageResults = await fetch(prevPageUrl)
-
-  const characterData = await prevPageResults.json()
+  const characterData = await newPageResults.json()
 
   return characterData
 }
