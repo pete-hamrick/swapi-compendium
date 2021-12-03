@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import CharactersList from '../../components/CharactersList/CharactersList'
 import Controls from '../../components/Controls/Controls'
-import { fetchCharacters } from '../../services/characters'
+import { fetchCharacters, fetchNewPage } from '../../services/characters'
 import { filterCharactersByEyeColor } from '../../utils/helperFunctions'
 import './Compendium.css'
 
@@ -53,7 +53,7 @@ export default function Compendium() {
   //   getFilteredCharacters()
   // }, [])
 
-  // want to generically handle clicking next or previous with a function
+  // want to handle clicking next or previous with a function
   // pass function down as props to each button
   // assign each button a value
 
@@ -68,7 +68,25 @@ export default function Compendium() {
   // call fetchNewPage function passing in prevPageUrl
   // update relevant state(probably all of it, ha)
   // set loading to false
-  const handleClick = async () => {}
+  const handleClick = async (value) => {
+    if (value === 'next') {
+      setLoading(true)
+      const newCharacterList = await fetchNewPage(nextPage)
+      setCharacters(newCharacterList.results)
+      // function to handle eyeColors??
+      setPrevPage(newCharacterList.previous)
+      setNextPage(newCharacterList.next)
+      setLoading(false)
+    } else {
+      setLoading(true)
+      const newCharacterList = await fetchNewPage(prevPage)
+      setCharacters(newCharacterList.results)
+      // eye color function?
+      setPrevPage(newCharacterList.previous)
+      setNextPage(newCharacterList.next)
+      setLoading(false)
+    }
+  }
 
   if (loading) {
     return <h1>Loading...</h1>

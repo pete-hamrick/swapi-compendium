@@ -15,7 +15,7 @@ export default function Controls({ characters, selectedEyeColor, filterChange, h
         ))}
       </select>
       <div className="next-prev-buttons">
-        <button value="prev" onClick={handleClick}>
+        <button value="prev" onClick={(e) => handleClick(e.target.value)}>
           Previous Page
         </button>
         <button value="next" onClick={handleClick}>
