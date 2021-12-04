@@ -1,0 +1,70 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should display the character list 1`] = `
+<div>
+  <ul
+    class="character-container"
+  >
+    <li
+      class="character"
+    >
+      <h5 />
+      <p>
+        Eye Color: 
+      </p>
+      <p>
+        Height: 
+        cm
+      </p>
+      <p>
+        Birth Year: 
+      </p>
+    </li>
+    <li
+      class="character"
+    >
+      <h5 />
+      <p>
+        Eye Color: 
+      </p>
+      <p>
+        Height: 
+        cm
+      </p>
+      <p>
+        Birth Year: 
+      </p>
+    </li>
+    <li
+      class="character"
+    >
+      <h5 />
+      <p>
+        Eye Color: 
+      </p>
+      <p>
+        Height: 
+        cm
+      </p>
+      <p>
+        Birth Year: 
+      </p>
+    </li>
+    <li
+      class="character"
+    >
+      <h5 />
+      <p>
+        Eye Color: 
+      </p>
+      <p>
+        Height: 
+        cm
+      </p>
+      <p>
+        Birth Year: 
+      </p>
+    </li>
+  </ul>
+</div>
+`;
