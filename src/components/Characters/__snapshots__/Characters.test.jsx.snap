@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should display the Character component 1`] = `
+<div>
+  <li
+    class="character"
+  >
+    <h5>
+      Babu Frik
+    </h5>
+    <p>
+      Eye Color: 
+      yellow
+    </p>
+    <p>
+      Height: 
+      22
+      cm
+    </p>
+    <p>
+      Birth Year: 
+      50BBY
+    </p>
+  </li>
+</div>
+`;

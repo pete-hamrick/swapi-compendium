@@ -12,3 +12,12 @@ export function filterCharactersByEyeColor(characterList, eyeColor) {
 
   return sortedCharacters
 }
+
+export function getEyeColors(listOfCharacters) {
+  const eyeColors = []
+  listOfCharacters.map((character) => {
+    eyeColors.push(character.eye_color)
+  })
+  const uniqueEyeColor = new Set(eyeColors)
+  return [...uniqueEyeColor]
+}
